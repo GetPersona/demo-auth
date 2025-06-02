@@ -46,7 +46,7 @@ function RootComponent() {
 
 	useEffect(() => {
 		initPersonaStudio();
-	}, [initPersonaStudio]);
+	}, []);
 
 	return (
 		<>
