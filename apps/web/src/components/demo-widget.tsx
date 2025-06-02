@@ -29,7 +29,6 @@ export const usePersonaStudio = () => {
 
 	const initPersonaStudio = () => {
 		if (document.getElementById(CHAT_WIDGET_ID)) {
-			setUserDetails();
 			return;
 		}
 
