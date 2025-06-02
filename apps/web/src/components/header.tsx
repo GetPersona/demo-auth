@@ -1,0 +1,34 @@
+import { Link } from "@tanstack/react-router";
+
+import useAuthStore, { fakeUser } from "@/lib/auth";
+import { ModeToggle } from "./mode-toggle";
+import { Button } from "./ui/button";
+
+export default function Header() {
+	const links = [{ to: "/", label: "Home" }];
+	const { user, logout, login } = useAuthStore();
+	return (
+		<div>
+			<div className="flex flex-row items-center justify-between px-2 py-1">
+				<nav className="flex gap-4 text-lg">
+					{links.map(({ to, label }) => {
+						return (
+							<Link key={to} to={to}>
+								{label}
+							</Link>
+						);
+					})}
+				</nav>
+				<div className="flex items-center gap-2">
+					{user ? (
+						<Button onClick={() => logout()}>Logout {user.name}</Button>
+					) : (
+						<Button onClick={() => login(fakeUser)}>Login</Button>
+					)}
+					<ModeToggle />
+				</div>
+			</div>
+			<hr />
+		</div>
+	);
+}
