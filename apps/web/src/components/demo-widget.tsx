@@ -16,7 +16,7 @@ export const usePersonaStudio = () => {
 		const currentUser = useAuthStore.getState().user;
 		console.log("setUserDetails called, currentUser:", currentUser);
 		window.PSChatConfig = {
-			hiddenButton: false,
+			hiddenButton: true,
 			name: currentUser?.name || "",
 			email: currentUser?.email || "",
 		};
