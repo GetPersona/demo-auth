@@ -2,7 +2,7 @@ import useAuthStore from "@/lib/auth";
 import { useCallback } from "react";
 
 const CHAT_WIDGET_URL =
-	"https://persona-studios.personastudios.ai/chat-widget.js";
+	"http://persona-studios.stag.internal.personastudios.ai/chat-widget.js";
 
 const CHAT_WIDGET_ID = "ps-chat-widget-script";
 
@@ -14,7 +14,7 @@ export const usePersonaStudio = () => {
 		const currentUser = useAuthStore.getState().user;
 		console.log("setUserDetails called, currentUser:", currentUser);
 		window.PSChatConfig = {
-			hiddenButton: true,
+			hiddenButton: false,
 			name: currentUser?.name || "",
 			email: currentUser?.email || "",
 		};
