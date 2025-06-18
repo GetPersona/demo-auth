@@ -2,7 +2,7 @@ import useAuthStore from "@/lib/auth";
 import { useCallback } from "react";
 
 const CHAT_WIDGET_URL =
-	"http://persona-studios.stag.internal.personastudios.ai/chat-widget.js";
+	"https://persona-studios.stag.internal.personastudios.ai/chat-widget.js";
 
 const CHAT_WIDGET_ID = "ps-chat-widget-script";
 
